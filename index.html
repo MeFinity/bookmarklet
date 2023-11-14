@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeFi's Bookmarklets</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="javascript:(function() {
+        fetch('https://e926.net/posts.json?limit=1&tags=order:random')
+          .then(response => response.json())
+          .then(data => {
+            const postId = (data.posts && data.posts[0]?.id) || '';
+            if (postId) window.location.href = `https://e926.net/posts/${postId}`;
+          });
+    })();">I'm feeling Fluffy</a>
+
+    <a href="javascript:(function() {
+        fetch('https://e621.net/posts.json?limit=1&tags=order:random')
+          .then(response => response.json())
+          .then(data => {
+            const postId = (data.posts && data.posts[0]?.id) || '';
+            if (postId) window.location.href = `https://e621.net/posts/${postId}`;
+          });
+    })();">I'm feeling Yiffy</a>
+
+    <h1>You know how to add a bookmarklet, you worthless flesh bag</h1>
+    <h2>I'll make this look good at some point</h2>
+</body>
+</html>
